@@ -21,87 +21,16 @@ import org.json.JSONObject;
  *
  * @author Elliot
  */
-@Path("/Clients")
+@Path("/api")
 public class CustomerResources {
 
-    @POST
-    @Path("/auth")
-    @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"})
-    @Consumes({MediaType.APPLICATION_JSON + ";charset=utf-8"})
-    public Response credencialesCliente(String cadena) {
-        boolean bandera=false;
-        JSONObject request=new JSONObject(cadena);
-        CustomerDAO dao=new CustomerDAO();
-        try {
-         
-        String user=request.getString("username");
-        String ogs=dao.findOGS(user);
-        JsonObject json=new JsonObject();
-        json.put("ogs",ogs);
-        return Response.status(Response.Status.OK).entity(ogs).build();
-        } catch (Exception e) {
-            System.out.println("error:"+e.getMessage());
-        }finally{
-            dao.cerrar();
-        }
-        return null;
-    }
-    /*===============================================================================
-          METODO PARA BUSCAR SOCIO CON BASE A DOCUMENTOS QUE SE TRAE EN EL REQUEST
-    =================================================================================*/
     
     @POST
-    @Path("ByDocuments")
+    @Path("/Cliente")
     @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"})
     @Consumes({MediaType.APPLICATION_JSON + ";charset=utf-8"})
-    public Response getClientsByDocument(String cadenaJson) throws Throwable {
-        System.out.println("Cadena Json:" + cadenaJson);
-        JSONObject jsonRecibido = new JSONObject(cadenaJson);
-        System.out.println("Request:" + jsonRecibido);
-        JsonObject Json_De_Error = new JsonObject();
-        JsonObject jsonServido = new JsonObject();
-        String DocumentId = jsonRecibido.getString("documentId");
-        int ClientType = jsonRecibido.getInt("clientType");
-        String Name = jsonRecibido.getString("name");
-        String LastName = jsonRecibido.getString("lastName");
-        String Mail = jsonRecibido.getString("mail");
-        String Phone = jsonRecibido.getString("phone");
-        String CellPhone = jsonRecibido.getString("cellPhone");
-        String UserName = jsonRecibido.getString("userName");
-        usuarios_banca_bankingly usersWeb = new usuarios_banca_bankingly();
-        CustomerDAO metodos = new CustomerDAO();
-        boolean bande = metodos.findUser(UserName);
-        System.out.println("bande:" + bande);
-        boolean buscaP = metodos.SearchPersonas(ClientType, DocumentId, Name, LastName, Mail, Phone, CellPhone);
-        System.out.println("Persona:" + buscaP);
-        boolean ac = buscaP;
-
-        try {
-            if (buscaP) {
-            } else {
-                Json_De_Error.put("Error", "SOCIO NO EXISTE,VERIFIQUE DATOS");
-                return Response.status(Response.Status.BAD_REQUEST).entity(Json_De_Error).build();
-            }
-            if (ac) {
-                ClientByDocumentDTO clientes = null;
-                if (bande==false){
-                    System.out.println("entro");
-                    clientes = metodos.getClientByDocument(DocumentId, ClientType, Name, LastName, Mail, Phone, CellPhone, UserName);
-                    if (clientes != null) {
-                        jsonServido.put("customers", clientes);
-                        return Response.status(Response.Status.OK).entity(jsonServido).build();
-                    }
-                } else {
-                    Json_De_Error.put("Error", "ERROR USUARIO YA ESTA REGISTRADO");
-                    return Response.status(Response.Status.BAD_REQUEST).entity(Json_De_Error).build();
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Error:" + e.getMessage());
-            return null;
-        } finally {
-            metodos.cerrar();
-        }
+    public Response cliente(String cadenaJson){
+        
         return null;
 
     }
