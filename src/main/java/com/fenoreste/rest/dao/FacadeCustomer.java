@@ -35,7 +35,7 @@ public abstract class FacadeCustomer<T> {
         EntityManager em = emf.createEntityManager();
         InfoClienteDTO info = new InfoClienteDTO();
         dataDTO data = new dataDTO();
-        try {
+        try {//Iniciando
             //Buscamos la parte social para saber si es un socio
             TablasPK tbpk = new TablasPK("prezzta", "parte_social");
             Tablas tb = em.find(Tablas.class, tbpk);
