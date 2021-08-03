@@ -29,6 +29,7 @@ public class ClienteResources {
     @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"})
     @Consumes({MediaType.APPLICATION_JSON + ";charset=utf-8"})
     public Response cliente(String request) {
+        System.out.println("Request:"+request);
         JSONObject jsonRequest_ = new JSONObject(request);
         //Leer request
         int tipo_documento_id = 0;
@@ -47,15 +48,20 @@ public class ClienteResources {
         //Si se leyo bien el request pasamos a hacer y extraer todos los datos que debe responder
         CustomerDAO dao = new CustomerDAO();
         JsonObject JsonResponse = new JsonObject();
+        InfoClienteDTO info=null;
         try {
-            //Buscamos si la persona que se esta ingresando con esa CURP realment existe en la entidad
+            //Buscamos si la persona que se esta ingresando con esa CURP realment existe en la entidad            
             Persona p = dao.buscaPersona(tipo_documento, numero_documento);
             if (p != null) {
-                InfoClienteDTO info = dao.clientInfo(p);
+                info = dao.clientInfo(p);
                 System.out.println("info:" + info);
+                //Informacion de la persona
+                
             } else {
                 JsonResponse.put("Error", "Socio no existe");
             }
+
+            JsonResponse.put("Persona",info);
 
         } catch (Exception e) {
             System.out.println("Error:"+e.getMessage());
@@ -63,6 +69,5 @@ public class ClienteResources {
             dao.cerrar();
         }
         return Response.status(Response.Status.OK).entity(JsonResponse).build();
-
     }
 }

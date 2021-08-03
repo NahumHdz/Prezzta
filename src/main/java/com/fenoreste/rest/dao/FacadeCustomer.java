@@ -81,8 +81,11 @@ public abstract class FacadeCustomer<T> {
                         data.setFecha_ingreso_laboral(dateToString(tr.getFechaingreso()));
                         data.setIngresos_mensuales(tr.getIng_mensual_neto().toString());
                         //Leemos colonias,municipio,estado para sacar datos personales de direccion
+                            System.out.println("IdColonia_Per:"+persona.getIdcolonia());
                         Colonias c=em.find(Colonias.class,persona.getIdcolonia());
+                            System.out.println("IdMunicipio_Col:"+c.getIdmunicipio());
                         Municipios mn=em.find(Municipios.class,c.getIdmunicipio());
+                            System.out.println("IdEstado_Mun:"+mn.getIdmunicipio());
                         Estados e=em.find(Estados.class,mn.getIdestado());
                         data.setEstado(e.getNombre());
                         data.setCiudad(mn.getNombre());

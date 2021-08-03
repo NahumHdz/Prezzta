@@ -6,6 +6,7 @@
 package com.fenoreste.rest.entidades;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,27 +19,32 @@ import javax.persistence.Table;
  *
  * @author wilmer
  */
-@Cacheable(false)
+
 @Entity
 @Table(name = "municipios")
 public class Municipios implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idmunicipio")
     private Integer idmunicipio;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "idestado")
     private Integer idestado;
+    @Column(name = "poblacion")
     private Integer poblacion;
-    private Integer localidad_siti;
+    @Column(name = "localidad_siti")
+    private BigInteger localidad_siti;
+    @Column(name = "de_cp")
     private String de_cp;
+    @Column(name = "a_cp")
     private String a_cp;
 
     public Municipios() {
     }
 
-    public Municipios(Integer idmunicipio, String nombre, Integer idestado, Integer poblacion, Integer localidad_siti, String de_cp, String a_cp) {
+    public Municipios(Integer idmunicipio, String nombre, Integer idestado, Integer poblacion, BigInteger localidad_siti, String de_cp, String a_cp) {
         this.idmunicipio = idmunicipio;
         this.nombre = nombre;
         this.idestado = idestado;
@@ -80,11 +86,11 @@ public class Municipios implements Serializable {
         this.poblacion = poblacion;
     }
 
-    public Integer getLocalidad_siti() {
+    public BigInteger getLocalidad_siti() {
         return localidad_siti;
     }
 
-    public void setLocalidad_siti(Integer localidad_siti) {
+    public void setLocalidad_siti(BigInteger localidad_siti) {
         this.localidad_siti = localidad_siti;
     }
 
@@ -104,10 +110,11 @@ public class Municipios implements Serializable {
         this.a_cp = a_cp;
     }
 
+   
     @Override
     public String toString() {
-        return "Municipios{" + "idmunicipio=" + idmunicipio + ", nombre=" + nombre + ", idestado=" + idestado + ", poblacion=" + poblacion + ", localidad_citi=" + localidad_siti + ", d_cp=" + de_cp + ", a_cp=" + a_cp + '}';
+        return "Municipios{" + "idmunicipio=" + idmunicipio + ", nombre=" + nombre + ", idestado=" + idestado + ", poblacion=" + poblacion + ", localidad_siti=" + localidad_siti + ", de_cp=" + de_cp + ", a_cp=" + a_cp + '}';
     }
-    
-    
+
+       
 }
