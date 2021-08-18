@@ -97,11 +97,11 @@ public abstract class FacadeCustomer<T> {
                         Estados e=em.find(Estados.class,mn.getIdestado());
                         data.setEstado(e.getNombre());
                         data.setCiudad(mn.getNombre());
-                        data.setDireccion(c.getIdcolonia()+","+persona.getNumeroext()+","+persona.getNumeroint());
+                        data.setDireccion(persona.getCalle() + " " + persona.getNumeroext());
                         data.setCodigo_postal(c.getCodigopostal());
                         CatalogosMenuPK menuPK=new CatalogosMenuPK("estatusvivienda",socioeconomicos.getEstatusvivienda());
                         CatalogoMenus mne=em.find(CatalogoMenus.class, menuPK);
-                        
+
                         if (socioeconomicos.getPropietariovivienda() != null){
                             data.setPropiedad_vivienda(socioeconomicos.getPropietariovivienda());}
                         else {data.setPropiedad_vivienda("");}
@@ -176,15 +176,46 @@ public abstract class FacadeCustomer<T> {
                         if(gt4 == null){ gt4 = 0; }
                         data.setGatos_deudas(String.valueOf(gt6 + gt4));
                         data.setGatos_total_gastos(String.valueOf(socioeconomicos.getGastosordinarios()));
-
                         if(data.getNum_socio_conyugue() != ""){
                             System.out.println("CASAD@");
-                            System.out.println("OGS CONYUGUE: " + ref.getIdorigenr() + "-" + ref.getIdgrupor() + "-" + ref.getIdsocior());
                             PersonasPK ppk = new PersonasPK(ref.getIdorigenr(), ref.getIdgrupor(), ref.getIdsocior());
                             Persona p_cony = em.find(Persona.class, ppk);
+                            TrabajoPK tcPK = new TrabajoPK(ref.getIdorigenr(), ref.getIdgrupor(), ref.getIdsocior());
+                            Trabajo tr_con = em.find(Trabajo.class,tcPK);
+                            Colonias co_con = em.find(Colonias.class,p_cony.getIdcolonia());
+                            Municipios mu_con = em.find(Municipios.class, co_con.getIdmunicipio());
+                            Estados es_con = em.find(Estados.class, mu_con.getIdestado());
                             data.setConyugue_edad(String.valueOf(cal_edad(p_cony.getFechanacimiento())));
-                            data.setConyugue_direccion(p_cony.getCalle());
+                            data.setConyugue_direccion(p_cony.getCalle() + " " + p_cony.getNumeroext());
+                            data.setConyugue_ocupacion(tr_con.getOcupacion());
+                            data.setConyugue_cp(co_con.getCodigopostal());
+                            data.setConyugue_ciudad(mu_con.getNombre());
+                            data.setConyugue_estado(es_con.getNombre());
+                            data.setConyugue_lugar_trabajo(tr_con.getNombre());
+                            data.setConyugue_antiguedad("");
+                            data.setConyugue_domicilio_empleo(tr_con.getCalle() + " " + tr_con.getNumero());
+                            data.setConyugue_telefono_empleo(tr_con.getTelefono());
+                            data.setConyugue_historial("");
+                            System.out.println("EDAD CONYUGUE: " + cal_edad(p_cony.getFechanacimiento()));
                         }else{System.out.println("NO ES CASAD@");}
+                        data.setOgs(o+g+s);
+                        data.setNumero_dependientes(String.valueOf(socioeconomicos.getDependientes() + socioeconomicos.getDependientes_menores()));
+                        data.setTelefono_recados(persona.getTelefonorecados());
+                        String con_aho = "SELECT * FROM auxiliares WHERE idorigen=" + a.getIdorigen()
+                                       + " AND idgrupo=" + a.getIdgrupo()
+                                       + " AND idsocio=" + a.getIdsocio()
+                                       + " AND idproducto=" + 110;
+                        System.out.println("Cosulta Ahorro: " + con_aho);
+                        Query queryAh = em.createNativeQuery(con_aho, Auxiliares.class);
+                        Auxiliares aux_ah = (Auxiliares) queryAh.getSingleResult();
+                        data.setMonto_ahorro(String.valueOf(aux_ah.getSaldo()));
+                        data.setAntiguedad_socio(String.valueOf(cal_edad(persona.getFechaingreso())));
+                        data.setParte_social(String.valueOf(a.getSaldo()));
+
+                        CatalogosMenuPK menusex = new CatalogosMenuPK("sexo", Integer.parseInt(String.valueOf(persona.getSexo())));
+                        CatalogoMenus cmsex = em.find(CatalogoMenus.class, menusex);
+                        data.setSexo(cmsex.getDescripcion());
+                        System.out.println("EDAD SOCIO: " + cal_edad(persona.getFechanacimiento()));
 
                         System.out.println("PPPPPPAAAAAAAASSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 
