@@ -10,23 +10,27 @@ import java.util.Date;
 import javax.persistence.Cacheable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
  *
- * @author wilmer
+ * @author nahum
  */
 @Cacheable
 @Entity
 @Table(name = "trabajo")
-public class Trabajo implements Serializable {
+public class Trabajos_Socio implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @EmbeddedId
-    protected TrabajoPK trabajoPK;
+    //@EmbeddedId
+    @Id
+    private Integer idorigen;
+    private Integer idgrupo;
+    private Integer idsocio;
     private String nombre;
     private String calle;
     private String numero;
@@ -59,11 +63,13 @@ public class Trabajo implements Serializable {
     private String ext_tel_1;
     private String ext_tel_2;
 
-    public Trabajo() {
+    public Trabajos_Socio() {
     }
 
-    public Trabajo(TrabajoPK trabajoPK, String nombre, String calle, String numero, Integer idcolonia, String telefono, String telefono2, String ocupacion, Date fechaingreso, String puesto, String entrecalles, Integer tipo_empleo, Integer sector_laboral, Integer giro_empresa, Integer forma_comprobar_ing, Date fechasalida, Integer consecutivo, Integer ing_mensual_bruto, Integer ing_mensual_neto, Integer frecuencia_ingresos, Integer tipo_ocupacion, Integer num_empleados, Integer num_taxis, Integer deducciones_deudas, Integer deducciones_otros, Integer actividad_economica, Integer ocupacion_numero, String actividad_economica_pld, String ext_tel_1, String ext_tel_2) {
-        this.trabajoPK = trabajoPK;
+    public Trabajos_Socio(Integer idorigen, Integer idgrupo, Integer idsocio, String nombre, String calle, String numero, Integer idcolonia, String telefono, String telefono2, String ocupacion, Date fechaingreso, String puesto, String entrecalles, Integer tipo_empleo, Integer sector_laboral, Integer giro_empresa, Integer forma_comprobar_ing, Date fechasalida, Integer consecutivo, Integer ing_mensual_bruto, Integer ing_mensual_neto, Integer frecuencia_ingresos, Integer tipo_ocupacion, Integer num_empleados, Integer num_taxis, Integer deducciones_deudas, Integer deducciones_otros, Integer actividad_economica, Integer ocupacion_numero, String actividad_economica_pld, String ext_tel_1, String ext_tel_2) {
+        this.idorigen = idorigen;
+        this.idgrupo = idgrupo;
+        this.idsocio = idsocio;
         this.nombre = nombre;
         this.calle = calle;
         this.numero = numero;
@@ -95,12 +101,28 @@ public class Trabajo implements Serializable {
         this.ext_tel_2 = ext_tel_2;
     }
 
-    public TrabajoPK getTrabajoPK() {
-        return trabajoPK;
+    public Integer getIdorigen() {
+        return idorigen;
     }
 
-    public void setTrabajoPK(TrabajoPK trabajoPK) {
-        this.trabajoPK = trabajoPK;
+    public void setIdorigen(Integer idorigen) {
+        this.idorigen = idorigen;
+    }
+
+    public Integer getIdgrupo() {
+        return idgrupo;
+    }
+
+    public void setIdgrupo(Integer idgrupo) {
+        this.idgrupo = idgrupo;
+    }
+
+    public Integer getIdsocio() {
+        return idsocio;
+    }
+
+    public void setIdsocio(Integer idsocio) {
+        this.idsocio = idsocio;
     }
 
     public String getNombre() {
@@ -316,7 +338,7 @@ public class Trabajo implements Serializable {
     }
 
     public void setActividad_economica_pld(String actividad_economica_pld) {
-        this.actividad_economica_pld= actividad_economica_pld;
+        this.actividad_economica_pld = actividad_economica_pld;
     }
 
     public String getExt_tel_1() {
@@ -337,7 +359,7 @@ public class Trabajo implements Serializable {
 
     @Override
     public String toString() {
-        return "Trabajo{" + "trabajoPK=" + trabajoPK + ", nombre=" + nombre + ", calle=" + calle + ", numero=" + numero + ", idcolonia=" + idcolonia + ", telefono=" + telefono + ", telefono2=" + telefono2 + ", ocupacion=" + ocupacion + ", fechaingreso=" + fechaingreso + ", puesto=" + puesto + ", entrecalles=" + entrecalles + ", tipo_empleo=" + tipo_empleo + ", sector_laboral=" + sector_laboral + ", giro_empresa=" + giro_empresa + ", forma_comprobar_ing=" + forma_comprobar_ing + ", fechasalida=" + fechasalida + ", consecutivo=" + consecutivo + ", ing_mensual_bruto=" + ing_mensual_bruto + ", ing_mensual_neto=" + ing_mensual_neto + ", frecuencia_ingresos=" + frecuencia_ingresos + ", tipo_ocupacion=" + tipo_ocupacion + ", num_empleados=" + num_empleados + ", num_taxis=" + num_taxis + ", deducciones_deudas=" + deducciones_deudas + ", deducciones_otros=" + deducciones_otros + ", actividad_economica=" + actividad_economica + ", ocupacion_numero=" + ocupacion_numero + ", actividad_economica_pld=" + actividad_economica_pld + ", ext_tel_1=" + ext_tel_1 + ", ext_tel_2=" + ext_tel_2 + '}';
+        return "Trabajos_Socio{" + "idorigen=" + idorigen + ", idgrupo=" + idgrupo + ", idsocio=" + idsocio + ", nombre=" + nombre + ", calle=" + calle + ", numero=" + numero + ", idcolonia=" + idcolonia + ", telefono=" + telefono + ", telefono2=" + telefono2 + ", ocupacion=" + ocupacion + ", fechaingreso=" + fechaingreso + ", puesto=" + puesto + ", entrecalles=" + entrecalles + ", tipo_empleo=" + tipo_empleo + ", sector_laboral=" + sector_laboral + ", giro_empresa=" + giro_empresa + ", forma_comprobar_ing=" + forma_comprobar_ing + ", fechasalida=" + fechasalida + ", consecutivo=" + consecutivo + ", ing_mensual_bruto=" + ing_mensual_bruto + ", ing_mensual_neto=" + ing_mensual_neto + ", frecuencia_ingresos=" + frecuencia_ingresos + ", tipo_ocupacion=" + tipo_ocupacion + ", num_empleados=" + num_empleados + ", num_taxis=" + num_taxis + ", deducciones_deudas=" + deducciones_deudas + ", deducciones_otros=" + deducciones_otros + ", actividad_economica=" + actividad_economica + ", ocupacion_numero=" + ocupacion_numero + ", actividad_economica_pld=" + actividad_economica_pld + ", ext_tel_1=" + ext_tel_1 + ", ext_tel_2=" + ext_tel_2 + '}';
     }
-    
+
 }

@@ -88,7 +88,7 @@ public class Persona implements Serializable {
     @Column(name = "nacionalidad")
     private Short nacionalidad;
     @Column(name = "grado_estudios")
-    private Short gradoEstudios;
+    private Integer gradoEstudios;
     @Column(name = "categoria")
     private Short categoria;
     @Column(name = "rfc")
@@ -339,11 +339,11 @@ public class Persona implements Serializable {
         this.nacionalidad = nacionalidad;
     }
 
-    public Short getGradoEstudios() {
+    public Integer getGradoEstudios() {
         return gradoEstudios;
     }
 
-    public void setGradoEstudios(Short gradoEstudios) {
+    public void setGradoEstudios(Integer gradoEstudios) {
         this.gradoEstudios = gradoEstudios;
     }
 

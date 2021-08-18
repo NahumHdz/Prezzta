@@ -55,8 +55,6 @@ public class ClienteResources {
             if (p != null) {
                 info = dao.clientInfo(p);
                 System.out.println("info:" + info);
-                //Informacion de la persona
-                
             } else {
                 JsonResponse.put("Error", "Socio no existe");
             }

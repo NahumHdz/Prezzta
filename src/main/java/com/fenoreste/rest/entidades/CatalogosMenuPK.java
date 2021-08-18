@@ -45,7 +45,5 @@ public class CatalogosMenuPK implements Serializable {
     public void setOpcion(Integer opcion) {
         this.opcion = opcion;
     }
-    
-    
 
-    }
+}

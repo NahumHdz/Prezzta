@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * @author wilmer
  */
 @Entity
-@Table(name = "catalogos_menus")
+@Table(name = "catalogo_menus")
 
 public class CatalogoMenus implements Serializable {
     private static final long serialVersionUID = 1L;

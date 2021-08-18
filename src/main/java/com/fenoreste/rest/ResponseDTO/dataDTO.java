@@ -41,6 +41,13 @@ public class dataDTO {
     private String monto_maximo_a_prestar;
     private String numero_cuenta;
     private String es_socio_comercial;
+    private String comercio_giro;
+    private String comercio_fecha_comienzo;
+    private String comercio_domicilio;
+    private String comercio_telefono;
+    private String comercio_ingreso_mensual;
+    private String comercio_otros_ingresos;
+    private String comercio_fuente_otros_ingresos;
 
     private String reca_completo;
     private String reca_recortado;
@@ -88,12 +95,43 @@ public class dataDTO {
     private String gastos_pagos_servicios;
 
     private String fecha_ingreso_caja;
+    
+    private String negocio_ingresos;
+    private String negocio_compras;
+    private String negocio_pago_sueldos;
+    private String negocio_pago_renta;
+    private String negocio_pago_creditos;
+    private String negocio_otros;
+    private String negocio_total_negocio;
+    private String negocio_horario_dias_laborables;
+    private String negocio_domicilio;
+    private String negocio_fuentes_otros_negocios;
 
     private String total_ingresos;
     private String otros_ingresos;
     private String fuentes_otros_ingresos;
 
+    private String gatos_alimentacion;
+    private String gatos_vestido_calzado;
+    private String gatos_servicios_vivienda;
+    private String gatos_transporte;
+    private String gatos_escuela;
+    private String gatos_deudas;
+    private String gatos_total_gastos;
+
     private String total_valor_propiedades;
+    
+    private String conyugue_edad;
+    private String conyugue_direccion;
+    private String conyugue_ocupacion;
+    private String conyugue_cp;
+    private String conyugue_ciudad;
+    private String conyugue_estado;
+    private String conyugue_lugar_trabajo;
+    private String conyugue_antiguedad;
+    private String conyugue_domicilio_empleo;
+    private String conyugue_telefono_empleo;
+    private String conyugue_historial;
 
     private comercioDTO comercio;
     private referenciasDTO referencias;
@@ -113,7 +151,7 @@ public class dataDTO {
 
     }
 
-    public dataDTO(String es_socio, String num_socio, String primer_nombre, String apellidos, String numero_documento, String telefono_Celular, String fecha_nacimiento, String lugar_nacimiento, String personas_viven_en_casa, String jubilado, String fecha_ingreso_laboral, String ingresos_mensuales, String estado, String ciudad, String direccion, String codigo_postal, String propiedad_vivienda, String email, String ultimo_estudio_cursado, String telefono_auxiliar, String antiguedad_domicilio, String num_socio_conyugue, String cant_hijos, String rubro_laboral, String telefono_trabajo, String monto_maximo_a_prestar, String numero_cuenta, String es_socio_comercial, String reca_completo, String reca_recortado, String ogs, String opa, String cat, String numero_producto, String clasificacion_cartera, String id_solicitud_siscore, String folio_prestamo, String numero_folio_poliza, String numero_pagare, String fecha_vencimiento_pagare, String resumen_calificacion, String regimen_patrimonial, String numero_dependientes, String telefono_recados, String monto_ahorro, String proteccion_ahorro_prestamo, String garantia_liquida, String tipo_garantia, String deposito_garantia_letras, String antiguedad_socio, String parte_social, String fideicomiso, String historial_cooperativa, String linea_credito, String linea_credito_letras, String aseguradora, String clausulas, String modalidad_pago, String tipo_operacion, String datos_del_poder, String disponibilidad, String porcentaje_capacidad, String idauxiliar, String idorigenp, String sexo, String fuente_ingresos_fijos, String monto_ingresos_fijos, String fuente_ingresos_variables, String monto_ingresos_variables, String gastos_alimentacion, String gastos_pagos_servicios, String fecha_ingreso_caja, String total_ingresos, String otros_ingresos, String fuentes_otros_ingresos, String total_valor_propiedades, comercioDTO comercio, referenciasDTO referencias, primerEmpleoDTO primer_empleo, segundoEmpleoDTO segundo_empleo, negocioDTO negocio, gastosDTO gatos, List<propiedadesDTO> propiedades, conyugueDTO conyugue, avalDTO aval, codeudorDTO codeudor, List<referenciasPersonalesDTO> referencias_personales, referenciasLaboralesDTO referencias_laborales, List<relacionesSociosDTO> relaciones_socios) {
+    public dataDTO(String es_socio, String num_socio, String primer_nombre, String apellidos, String numero_documento, String telefono_Celular, String fecha_nacimiento, String lugar_nacimiento, String personas_viven_en_casa, String jubilado, String fecha_ingreso_laboral, String ingresos_mensuales, String estado, String ciudad, String direccion, String codigo_postal, String propiedad_vivienda, String email, String ultimo_estudio_cursado, String telefono_auxiliar, String antiguedad_domicilio, String num_socio_conyugue, String cant_hijos, String rubro_laboral, String telefono_trabajo, String monto_maximo_a_prestar, String numero_cuenta, String es_socio_comercial, String comercio_giro, String comercio_fecha_comienzo, String comercio_domicilio, String comercio_telefono, String comercio_ingreso_mensual, String comercio_otros_ingresos, String comercio_fuente_otros_ingresos, String reca_completo, String reca_recortado, String ogs, String opa, String cat, String numero_producto, String clasificacion_cartera, String id_solicitud_siscore, String folio_prestamo, String numero_folio_poliza, String numero_pagare, String fecha_vencimiento_pagare, String resumen_calificacion, String regimen_patrimonial, String numero_dependientes, String telefono_recados, String monto_ahorro, String proteccion_ahorro_prestamo, String garantia_liquida, String tipo_garantia, String deposito_garantia_letras, String antiguedad_socio, String parte_social, String fideicomiso, String historial_cooperativa, String linea_credito, String linea_credito_letras, String aseguradora, String clausulas, String modalidad_pago, String tipo_operacion, String datos_del_poder, String disponibilidad, String porcentaje_capacidad, String idauxiliar, String idorigenp, String sexo, String fuente_ingresos_fijos, String monto_ingresos_fijos, String fuente_ingresos_variables, String monto_ingresos_variables, String gastos_alimentacion, String gastos_pagos_servicios, String fecha_ingreso_caja, String negocio_ingresos, String negocio_compras, String negocio_pago_sueldos, String negocio_pago_renta, String negocio_pago_creditos, String negocio_otros, String negocio_total_negocio, String negocio_horario_dias_laborables, String negocio_domicilio, String negocio_fuentes_otros_negocios, String total_ingresos, String otros_ingresos, String fuentes_otros_ingresos, String gatos_alimentacion, String gatos_vestido_calzado, String gatos_servicios_vivienda, String gatos_transporte, String gatos_escuela, String gatos_deudas, String gatos_total_gastos, String total_valor_propiedades, String conyugue_edad, String conyugue_direccion, String conyugue_ocupacion, String conyugue_cp, String conyugue_ciudad, String conyugue_estado, String conyugue_lugar_trabajo, String conyugue_antiguedad, String conyugue_domicilio_empleo, String conyugue_telefono_empleo, String conyugue_historial, comercioDTO comercio, referenciasDTO referencias, primerEmpleoDTO primer_empleo, segundoEmpleoDTO segundo_empleo, negocioDTO negocio, gastosDTO gatos, List<propiedadesDTO> propiedades, conyugueDTO conyugue, avalDTO aval, codeudorDTO codeudor, List<referenciasPersonalesDTO> referencias_personales, referenciasLaboralesDTO referencias_laborales, List<relacionesSociosDTO> relaciones_socios) {
         this.es_socio = es_socio;
         this.num_socio = num_socio;
         this.primer_nombre = primer_nombre;
@@ -142,6 +180,13 @@ public class dataDTO {
         this.monto_maximo_a_prestar = monto_maximo_a_prestar;
         this.numero_cuenta = numero_cuenta;
         this.es_socio_comercial = es_socio_comercial;
+        this.comercio_giro = comercio_giro;
+        this.comercio_fecha_comienzo = comercio_fecha_comienzo;
+        this.comercio_domicilio = comercio_domicilio;
+        this.comercio_telefono = comercio_telefono;
+        this.comercio_ingreso_mensual = comercio_ingreso_mensual;
+        this.comercio_otros_ingresos = comercio_otros_ingresos;
+        this.comercio_fuente_otros_ingresos = comercio_fuente_otros_ingresos;
         this.reca_completo = reca_completo;
         this.reca_recortado = reca_recortado;
         this.ogs = ogs;
@@ -186,10 +231,38 @@ public class dataDTO {
         this.gastos_alimentacion = gastos_alimentacion;
         this.gastos_pagos_servicios = gastos_pagos_servicios;
         this.fecha_ingreso_caja = fecha_ingreso_caja;
+        this.negocio_ingresos = negocio_ingresos;
+        this.negocio_compras = negocio_compras;
+        this.negocio_pago_sueldos = negocio_pago_sueldos;
+        this.negocio_pago_renta = negocio_pago_renta;
+        this.negocio_pago_creditos = negocio_pago_creditos;
+        this.negocio_otros = negocio_otros;
+        this.negocio_total_negocio = negocio_total_negocio;
+        this.negocio_horario_dias_laborables = negocio_horario_dias_laborables;
+        this.negocio_domicilio = negocio_domicilio;
+        this.negocio_fuentes_otros_negocios = negocio_fuentes_otros_negocios;
         this.total_ingresos = total_ingresos;
         this.otros_ingresos = otros_ingresos;
         this.fuentes_otros_ingresos = fuentes_otros_ingresos;
+        this.gatos_alimentacion = gatos_alimentacion;
+        this.gatos_vestido_calzado = gatos_vestido_calzado;
+        this.gatos_servicios_vivienda = gatos_servicios_vivienda;
+        this.gatos_transporte = gatos_transporte;
+        this.gatos_escuela = gatos_escuela;
+        this.gatos_deudas = gatos_deudas;
+        this.gatos_total_gastos = gatos_total_gastos;
         this.total_valor_propiedades = total_valor_propiedades;
+        this.conyugue_edad = conyugue_edad;
+        this.conyugue_direccion = conyugue_direccion;
+        this.conyugue_ocupacion = conyugue_ocupacion;
+        this.conyugue_cp = conyugue_cp;
+        this.conyugue_ciudad = conyugue_ciudad;
+        this.conyugue_estado = conyugue_estado;
+        this.conyugue_lugar_trabajo = conyugue_lugar_trabajo;
+        this.conyugue_antiguedad = conyugue_antiguedad;
+        this.conyugue_domicilio_empleo = conyugue_domicilio_empleo;
+        this.conyugue_telefono_empleo = conyugue_telefono_empleo;
+        this.conyugue_historial = conyugue_historial;
         this.comercio = comercio;
         this.referencias = referencias;
         this.primer_empleo = primer_empleo;
@@ -917,11 +990,289 @@ public class dataDTO {
         this.relaciones_socios = relaciones_socios;
     }
 
+    public String getComercio_giro() {
+        return comercio_giro;
+    }
+
+    public void setComercio_giro(String comercio_giro) {
+        this.comercio_giro = comercio_giro;
+    }
+
+    public String getComercio_fecha_comienzo() {
+        return comercio_fecha_comienzo;
+    }
+
+    public void setComercio_fecha_comienzo(String comercio_fecha_comienzo) {
+        this.comercio_fecha_comienzo = comercio_fecha_comienzo;
+    }
+
+    public String getComercio_domicilio() {
+        return comercio_domicilio;
+    }
+
+    public void setComercio_domicilio(String comercio_domicilio) {
+        this.comercio_domicilio = comercio_domicilio;
+    }
+
+    public String getComercio_telefono() {
+        return comercio_telefono;
+    }
+
+    public void setComercio_telefono(String comercio_telefono) {
+        this.comercio_telefono = comercio_telefono;
+    }
+
+    public String getComercio_ingreso_mensual() {
+        return comercio_ingreso_mensual;
+    }
+
+    public void setComercio_ingreso_mensual(String comercio_ingreso_mensual) {
+        this.comercio_ingreso_mensual = comercio_ingreso_mensual;
+    }
+
+    public String getComercio_otros_ingresos() {
+        return comercio_otros_ingresos;
+    }
+
+    public void setComercio_otros_ingresos(String comercio_otros_ingresos) {
+        this.comercio_otros_ingresos = comercio_otros_ingresos;
+    }
+
+    public String getComercio_fuente_otros_ingresos() {
+        return comercio_fuente_otros_ingresos;
+    }
+
+    public void setComercio_fuente_otros_ingresos(String comercio_fuente_otros_ingresos) {
+        this.comercio_fuente_otros_ingresos = comercio_fuente_otros_ingresos;
+    }
+
+    public String getNegocio_ingresos() {
+        return negocio_ingresos;
+    }
+
+    public void setNegocio_ingresos(String negocio_ingresos) {
+        this.negocio_ingresos = negocio_ingresos;
+    }
+
+    public String getNegocio_compras() {
+        return negocio_compras;
+    }
+
+    public void setNegocio_compras(String negocio_compras) {
+        this.negocio_compras = negocio_compras;
+    }
+
+    public String getNegocio_pago_sueldos() {
+        return negocio_pago_sueldos;
+    }
+
+    public void setNegocio_pago_sueldos(String negocio_pago_sueldos) {
+        this.negocio_pago_sueldos = negocio_pago_sueldos;
+    }
+
+    public String getNegocio_pago_renta() {
+        return negocio_pago_renta;
+    }
+
+    public void setNegocio_pago_renta(String negocio_pago_renta) {
+        this.negocio_pago_renta = negocio_pago_renta;
+    }
+
+    public String getNegocio_pago_creditos() {
+        return negocio_pago_creditos;
+    }
+
+    public void setNegocio_pago_creditos(String negocio_pago_creditos) {
+        this.negocio_pago_creditos = negocio_pago_creditos;
+    }
+
+    public String getNegocio_otros() {
+        return negocio_otros;
+    }
+
+    public void setNegocio_otros(String negocio_otros) {
+        this.negocio_otros = negocio_otros;
+    }
+
+    public String getNegocio_total_negocio() {
+        return negocio_total_negocio;
+    }
+
+    public void setNegocio_total_negocio(String negocio_total_negocio) {
+        this.negocio_total_negocio = negocio_total_negocio;
+    }
+
+    public String getNegocio_horario_dias_laborables() {
+        return negocio_horario_dias_laborables;
+    }
+
+    public void setNegocio_horario_dias_laborables(String negocio_horario_dias_laborables) {
+        this.negocio_horario_dias_laborables = negocio_horario_dias_laborables;
+    }
+
+    public String getNegocio_domicilio() {
+        return negocio_domicilio;
+    }
+
+    public void setNegocio_domicilio(String negocio_domicilio) {
+        this.negocio_domicilio = negocio_domicilio;
+    }
+
+    public String getNegocio_fuentes_otros_negocios() {
+        return negocio_fuentes_otros_negocios;
+    }
+
+    public void setNegocio_fuentes_otros_negocios(String negocio_fuentes_otros_negocios) {
+        this.negocio_fuentes_otros_negocios = negocio_fuentes_otros_negocios;
+    }
+
+    public String getGatos_alimentacion() {
+        return gatos_alimentacion;
+    }
+
+    public void setGatos_alimentacion(String gatos_alimentacion) {
+        this.gatos_alimentacion = gatos_alimentacion;
+    }
+
+    public String getGatos_vestido_calzado() {
+        return gatos_vestido_calzado;
+    }
+
+    public void setGatos_vestido_calzado(String gatos_vestido_calzado) {
+        this.gatos_vestido_calzado = gatos_vestido_calzado;
+    }
+
+    public String getGatos_servicios_vivienda() {
+        return gatos_servicios_vivienda;
+    }
+
+    public void setGatos_servicios_vivienda(String gatos_servicios_vivienda) {
+        this.gatos_servicios_vivienda = gatos_servicios_vivienda;
+    }
+
+    public String getGatos_transporte() {
+        return gatos_transporte;
+    }
+
+    public void setGatos_transporte(String gatos_transporte) {
+        this.gatos_transporte = gatos_transporte;
+    }
+
+    public String getGatos_escuela() {
+        return gatos_escuela;
+    }
+
+    public void setGatos_escuela(String gatos_escuela) {
+        this.gatos_escuela = gatos_escuela;
+    }
+
+    public String getGatos_deudas() {
+        return gatos_deudas;
+    }
+
+    public void setGatos_deudas(String gatos_deudas) {
+        this.gatos_deudas = gatos_deudas;
+    }
+
+    public String getGatos_total_gastos() {
+        return gatos_total_gastos;
+    }
+
+    public void setGatos_total_gastos(String gatos_total_gastos) {
+        this.gatos_total_gastos = gatos_total_gastos;
+    }
+
+    public String getConyugue_edad() {
+        return conyugue_edad;
+    }
+
+    public void setConyugue_edad(String conyugue_edad) {
+        this.conyugue_edad = conyugue_edad;
+    }
+
+    public String getConyugue_direccion() {
+        return conyugue_direccion;
+    }
+
+    public void setConyugue_direccion(String conyugue_direccion) {
+        this.conyugue_direccion = conyugue_direccion;
+    }
+
+    public String getConyugue_ocupacion() {
+        return conyugue_ocupacion;
+    }
+
+    public void setConyugue_ocupacion(String conyugue_ocupacion) {
+        this.conyugue_ocupacion = conyugue_ocupacion;
+    }
+
+    public String getConyugue_cp() {
+        return conyugue_cp;
+    }
+
+    public void setConyugue_cp(String conyugue_cp) {
+        this.conyugue_cp = conyugue_cp;
+    }
+
+    public String getConyugue_ciudad() {
+        return conyugue_ciudad;
+    }
+
+    public void setConyugue_ciudad(String conyugue_ciudad) {
+        this.conyugue_ciudad = conyugue_ciudad;
+    }
+
+    public String getConyugue_estado() {
+        return conyugue_estado;
+    }
+
+    public void setConyugue_estado(String conyugue_estado) {
+        this.conyugue_estado = conyugue_estado;
+    }
+
+    public String getConyugue_lugar_trabajo() {
+        return conyugue_lugar_trabajo;
+    }
+
+    public void setConyugue_lugar_trabajo(String conyugue_lugar_trabajo) {
+        this.conyugue_lugar_trabajo = conyugue_lugar_trabajo;
+    }
+
+    public String getConyugue_antiguedad() {
+        return conyugue_antiguedad;
+    }
+
+    public void setConyugue_antiguedad(String conyugue_antiguedad) {
+        this.conyugue_antiguedad = conyugue_antiguedad;
+    }
+
+    public String getConyugue_domicilio_empleo() {
+        return conyugue_domicilio_empleo;
+    }
+
+    public void setConyugue_domicilio_empleo(String conyugue_domicilio_empleo) {
+        this.conyugue_domicilio_empleo = conyugue_domicilio_empleo;
+    }
+
+    public String getConyugue_telefono_empleo() {
+        return conyugue_telefono_empleo;
+    }
+
+    public void setConyugue_telefono_empleo(String conyugue_telefono_empleo) {
+        this.conyugue_telefono_empleo = conyugue_telefono_empleo;
+    }
+
+    public String getConyugue_historial() {
+        return conyugue_historial;
+    }
+
+    public void setConyugue_historial(String conyugue_historial) {
+        this.conyugue_historial = conyugue_historial;
+    }
+
     @Override
     public String toString() {
-        return "dataDTO{" + "es_socio=" + es_socio + ", num_socio=" + num_socio + ", primer_nombre=" + primer_nombre + ", apellidos=" + apellidos + ", numero_documento=" + numero_documento + ", telefono_Celular=" + telefono_Celular + ", fecha_nacimiento=" + fecha_nacimiento + ", lugar_nacimiento=" + lugar_nacimiento + ", personas_viven_en_casa=" + personas_viven_en_casa + ", jubilado=" + jubilado + ", fecha_ingreso_laboral=" + fecha_ingreso_laboral + ", ingresos_mensuales=" + ingresos_mensuales + ", estado=" + estado + ", ciudad=" + ciudad + ", direccion=" + direccion + ", codigo_postal=" + codigo_postal + ", propiedad_vivienda=" + propiedad_vivienda + ", email=" + email + ", ultimo_estudio_cursado=" + ultimo_estudio_cursado + ", telefono_auxiliar=" + telefono_auxiliar + ", antiguedad_domicilio=" + antiguedad_domicilio + ", num_socio_conyugue=" + num_socio_conyugue + ", cant_hijos=" + cant_hijos + ", rubro_laboral=" + rubro_laboral + ", telefono_trabajo=" + telefono_trabajo + ", monto_maximo_a_prestar=" + monto_maximo_a_prestar + ", numero_cuenta=" + numero_cuenta + ", es_socio_comercial=" + es_socio_comercial + ", reca_completo=" + reca_completo + ", reca_recortado=" + reca_recortado + ", ogs=" + ogs + ", opa=" + opa + ", cat=" + cat + ", numero_producto=" + numero_producto + ", clasificacion_cartera=" + clasificacion_cartera + ", id_solicitud_siscore=" + id_solicitud_siscore + ", folio_prestamo=" + folio_prestamo + ", numero_folio_poliza=" + numero_folio_poliza + ", numero_pagare=" + numero_pagare + ", fecha_vencimiento_pagare=" + fecha_vencimiento_pagare + ", resumen_calificacion=" + resumen_calificacion + ", regimen_patrimonial=" + regimen_patrimonial + ", numero_dependientes=" + numero_dependientes + ", telefono_recados=" + telefono_recados + ", monto_ahorro=" + monto_ahorro + ", proteccion_ahorro_prestamo=" + proteccion_ahorro_prestamo + ", garantia_liquida=" + garantia_liquida + ", tipo_garantia=" + tipo_garantia + ", deposito_garantia_letras=" + deposito_garantia_letras + ", antiguedad_socio=" + antiguedad_socio + ", parte_social=" + parte_social + ", fideicomiso=" + fideicomiso + ", historial_cooperativa=" + historial_cooperativa + ", linea_credito=" + linea_credito + ", linea_credito_letras=" + linea_credito_letras + ", aseguradora=" + aseguradora + ", clausulas=" + clausulas + ", modalidad_pago=" + modalidad_pago + ", tipo_operacion=" + tipo_operacion + ", datos_del_poder=" + datos_del_poder + ", disponibilidad=" + disponibilidad + ", porcentaje_capacidad=" + porcentaje_capacidad + ", idauxiliar=" + idauxiliar + ", idorigenp=" + idorigenp + ", sexo=" + sexo + ", fuente_ingresos_fijos=" + fuente_ingresos_fijos + ", monto_ingresos_fijos=" + monto_ingresos_fijos + ", fuente_ingresos_variables=" + fuente_ingresos_variables + ", monto_ingresos_variables=" + monto_ingresos_variables + ", gastos_alimentacion=" + gastos_alimentacion + ", gastos_pagos_servicios=" + gastos_pagos_servicios + ", fecha_ingreso_caja=" + fecha_ingreso_caja + ", total_ingresos=" + total_ingresos + ", otros_ingresos=" + otros_ingresos + ", fuentes_otros_ingresos=" + fuentes_otros_ingresos + ", total_valor_propiedades=" + total_valor_propiedades + ", comercio=" + comercio + ", referencias=" + referencias + ", primer_empleo=" + primer_empleo + ", segundo_empleo=" + segundo_empleo + ", negocio=" + negocio + ", gatos=" + gatos + ", propiedades=" + propiedades + ", conyugue=" + conyugue + ", aval=" + aval + ", codeudor=" + codeudor + ", referencias_personales=" + referencias_personales + ", referencias_laborales=" + referencias_laborales + ", relaciones_socios=" + relaciones_socios + '}';
+        return "dataDTO{" + "es_socio=" + es_socio + ", num_socio=" + num_socio + ", primer_nombre=" + primer_nombre + ", apellidos=" + apellidos + ", numero_documento=" + numero_documento + ", telefono_Celular=" + telefono_Celular + ", fecha_nacimiento=" + fecha_nacimiento + ", lugar_nacimiento=" + lugar_nacimiento + ", personas_viven_en_casa=" + personas_viven_en_casa + ", jubilado=" + jubilado + ", fecha_ingreso_laboral=" + fecha_ingreso_laboral + ", ingresos_mensuales=" + ingresos_mensuales + ", estado=" + estado + ", ciudad=" + ciudad + ", direccion=" + direccion + ", codigo_postal=" + codigo_postal + ", propiedad_vivienda=" + propiedad_vivienda + ", email=" + email + ", ultimo_estudio_cursado=" + ultimo_estudio_cursado + ", telefono_auxiliar=" + telefono_auxiliar + ", antiguedad_domicilio=" + antiguedad_domicilio + ", num_socio_conyugue=" + num_socio_conyugue + ", cant_hijos=" + cant_hijos + ", rubro_laboral=" + rubro_laboral + ", telefono_trabajo=" + telefono_trabajo + ", monto_maximo_a_prestar=" + monto_maximo_a_prestar + ", numero_cuenta=" + numero_cuenta + ", es_socio_comercial=" + es_socio_comercial + ", comercio_giro=" + comercio_giro + ", comercio_fecha_comienzo=" + comercio_fecha_comienzo + ", comercio_domicilio=" + comercio_domicilio + ", comercio_telefono=" + comercio_telefono + ", comercio_ingreso_mensual=" + comercio_ingreso_mensual + ", comercio_otros_ingresos=" + comercio_otros_ingresos + ", comercio_fuente_otros_ingresos=" + comercio_fuente_otros_ingresos + ", reca_completo=" + reca_completo + ", reca_recortado=" + reca_recortado + ", ogs=" + ogs + ", opa=" + opa + ", cat=" + cat + ", numero_producto=" + numero_producto + ", clasificacion_cartera=" + clasificacion_cartera + ", id_solicitud_siscore=" + id_solicitud_siscore + ", folio_prestamo=" + folio_prestamo + ", numero_folio_poliza=" + numero_folio_poliza + ", numero_pagare=" + numero_pagare + ", fecha_vencimiento_pagare=" + fecha_vencimiento_pagare + ", resumen_calificacion=" + resumen_calificacion + ", regimen_patrimonial=" + regimen_patrimonial + ", numero_dependientes=" + numero_dependientes + ", telefono_recados=" + telefono_recados + ", monto_ahorro=" + monto_ahorro + ", proteccion_ahorro_prestamo=" + proteccion_ahorro_prestamo + ", garantia_liquida=" + garantia_liquida + ", tipo_garantia=" + tipo_garantia + ", deposito_garantia_letras=" + deposito_garantia_letras + ", antiguedad_socio=" + antiguedad_socio + ", parte_social=" + parte_social + ", fideicomiso=" + fideicomiso + ", historial_cooperativa=" + historial_cooperativa + ", linea_credito=" + linea_credito + ", linea_credito_letras=" + linea_credito_letras + ", aseguradora=" + aseguradora + ", clausulas=" + clausulas + ", modalidad_pago=" + modalidad_pago + ", tipo_operacion=" + tipo_operacion + ", datos_del_poder=" + datos_del_poder + ", disponibilidad=" + disponibilidad + ", porcentaje_capacidad=" + porcentaje_capacidad + ", idauxiliar=" + idauxiliar + ", idorigenp=" + idorigenp + ", sexo=" + sexo + ", fuente_ingresos_fijos=" + fuente_ingresos_fijos + ", monto_ingresos_fijos=" + monto_ingresos_fijos + ", fuente_ingresos_variables=" + fuente_ingresos_variables + ", monto_ingresos_variables=" + monto_ingresos_variables + ", gastos_alimentacion=" + gastos_alimentacion + ", gastos_pagos_servicios=" + gastos_pagos_servicios + ", fecha_ingreso_caja=" + fecha_ingreso_caja + ", negocio_ingresos=" + negocio_ingresos + ", negocio_compras=" + negocio_compras + ", negocio_pago_sueldos=" + negocio_pago_sueldos + ", negocio_pago_renta=" + negocio_pago_renta + ", negocio_pago_creditos=" + negocio_pago_creditos + ", negocio_otros=" + negocio_otros + ", negocio_total_negocio=" + negocio_total_negocio + ", negocio_horario_dias_laborables=" + negocio_horario_dias_laborables + ", negocio_domicilio=" + negocio_domicilio + ", negocio_fuentes_otros_negocios=" + negocio_fuentes_otros_negocios + ", total_ingresos=" + total_ingresos + ", otros_ingresos=" + otros_ingresos + ", fuentes_otros_ingresos=" + fuentes_otros_ingresos + ", gatos_alimentacion=" + gatos_alimentacion + ", gatos_vestido_calzado=" + gatos_vestido_calzado + ", gatos_servicios_vivienda=" + gatos_servicios_vivienda + ", gatos_transporte=" + gatos_transporte + ", gatos_escuela=" + gatos_escuela + ", gatos_deudas=" + gatos_deudas + ", gatos_total_gastos=" + gatos_total_gastos + ", total_valor_propiedades=" + total_valor_propiedades + ", conyugue_edad=" + conyugue_edad + ", conyugue_direccion=" + conyugue_direccion + ", conyugue_ocupacion=" + conyugue_ocupacion + ", conyugue_cp=" + conyugue_cp + ", conyugue_ciudad=" + conyugue_ciudad + ", conyugue_estado=" + conyugue_estado + ", conyugue_lugar_trabajo=" + conyugue_lugar_trabajo + ", conyugue_antiguedad=" + conyugue_antiguedad + ", conyugue_domicilio_empleo=" + conyugue_domicilio_empleo + ", conyugue_telefono_empleo=" + conyugue_telefono_empleo + ", conyugue_historial=" + conyugue_historial + ", comercio=" + comercio + ", referencias=" + referencias + ", primer_empleo=" + primer_empleo + ", segundo_empleo=" + segundo_empleo + ", negocio=" + negocio + ", gatos=" + gatos + ", propiedades=" + propiedades + ", conyugue=" + conyugue + ", aval=" + aval + ", codeudor=" + codeudor + ", referencias_personales=" + referencias_personales + ", referencias_laborales=" + referencias_laborales + ", relaciones_socios=" + relaciones_socios + '}';
     }
-    
-    
 
 }
