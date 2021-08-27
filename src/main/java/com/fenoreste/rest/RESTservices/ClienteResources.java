@@ -6,6 +6,7 @@
 package com.fenoreste.rest.RESTservices;
 
 import com.fenoreste.rest.ResponseDTO.InfoClienteDTO;
+import com.fenoreste.rest.ResponseDTO.dataDTO;
 import com.fenoreste.rest.dao.CustomerDAO;
 import com.fenoreste.rest.entidades.Persona;
 import com.github.cliftonlabs.json_simple.JsonObject;
@@ -49,17 +50,18 @@ public class ClienteResources {
         CustomerDAO dao = new CustomerDAO();
         JsonObject JsonResponse = new JsonObject();
         InfoClienteDTO info=null;
+        dataDTO dto=null;
         try {
             //Buscamos si la persona que se esta ingresando con esa CURP realment existe en la entidad            
             Persona p = dao.buscaPersona(tipo_documento, numero_documento);
             if (p != null) {
-                info = dao.clientInfo(p);
+                 dto= dao.clientInfo(p);
                 System.out.println("info:" + info);
             } else {
                 JsonResponse.put("Error", "Socio no existe");
             }
 
-            JsonResponse.put("Persona",info);
+            JsonResponse.put("data",dto);
 
         } catch (Exception e) {
             System.out.println("Error:"+e.getMessage());

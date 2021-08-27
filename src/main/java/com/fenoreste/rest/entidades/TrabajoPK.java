@@ -23,14 +23,17 @@ import javax.persistence.Embeddable;
    private Integer idgrupo; 
    @Column(name = "idsocio")
    private Integer idsocio; 
+   @Column(name="consecutivo")
+   private Integer consecutivo;
 
     public TrabajoPK() {
     }
 
-    public TrabajoPK(Integer idtorigen, Integer idgrupo, Integer idsocio) {
+    public TrabajoPK(Integer idtorigen, Integer idgrupo, Integer idsocio, Integer consecutivo) {
         this.idtorigen = idtorigen;
         this.idgrupo = idgrupo;
         this.idsocio = idsocio;
+        this.consecutivo = consecutivo;
     }
 
     public Integer getIdtorigen() {
@@ -57,6 +60,12 @@ import javax.persistence.Embeddable;
         this.idsocio = idsocio;
     }
 
+    public Integer getConsecutivo() {
+        return consecutivo;
+    }
+
+    public void setConsecutivo(Integer consecutivo) {
+        this.consecutivo = consecutivo;
+    }
     
-   
 }

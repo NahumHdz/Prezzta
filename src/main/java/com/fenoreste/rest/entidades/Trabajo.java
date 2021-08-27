@@ -44,7 +44,6 @@ public class Trabajo implements Serializable {
     private Integer forma_comprobar_ing;
     @Temporal(TemporalType.DATE)
     private Date fechasalida;
-    private Integer consecutivo;
     private Integer ing_mensual_bruto;
     private Integer ing_mensual_neto;
     private Integer frecuencia_ingresos;
@@ -62,7 +61,7 @@ public class Trabajo implements Serializable {
     public Trabajo() {
     }
 
-    public Trabajo(TrabajoPK trabajoPK, String nombre, String calle, String numero, Integer idcolonia, String telefono, String telefono2, String ocupacion, Date fechaingreso, String puesto, String entrecalles, Integer tipo_empleo, Integer sector_laboral, Integer giro_empresa, Integer forma_comprobar_ing, Date fechasalida, Integer consecutivo, Integer ing_mensual_bruto, Integer ing_mensual_neto, Integer frecuencia_ingresos, Integer tipo_ocupacion, Integer num_empleados, Integer num_taxis, Integer deducciones_deudas, Integer deducciones_otros, Integer actividad_economica, Integer ocupacion_numero, String actividad_economica_pld, String ext_tel_1, String ext_tel_2) {
+    public Trabajo(TrabajoPK trabajoPK, String nombre, String calle, String numero, Integer idcolonia, String telefono, String telefono2, String ocupacion, Date fechaingreso, String puesto, String entrecalles, Integer tipo_empleo, Integer sector_laboral, Integer giro_empresa, Integer forma_comprobar_ing, Date fechasalida, Integer ing_mensual_bruto, Integer ing_mensual_neto, Integer frecuencia_ingresos, Integer tipo_ocupacion, Integer num_empleados, Integer num_taxis, Integer deducciones_deudas, Integer deducciones_otros, Integer actividad_economica, Integer ocupacion_numero, String actividad_economica_pld, String ext_tel_1, String ext_tel_2) {
         this.trabajoPK = trabajoPK;
         this.nombre = nombre;
         this.calle = calle;
@@ -79,7 +78,6 @@ public class Trabajo implements Serializable {
         this.giro_empresa = giro_empresa;
         this.forma_comprobar_ing = forma_comprobar_ing;
         this.fechasalida = fechasalida;
-        this.consecutivo = consecutivo;
         this.ing_mensual_bruto = ing_mensual_bruto;
         this.ing_mensual_neto = ing_mensual_neto;
         this.frecuencia_ingresos = frecuencia_ingresos;
@@ -223,14 +221,6 @@ public class Trabajo implements Serializable {
         this.fechasalida = fechasalida;
     }
 
-    public Integer getConsecutivo() {
-        return consecutivo;
-    }
-
-    public void setConsecutivo(Integer consecutivo) {
-        this.consecutivo = consecutivo;
-    }
-
     public Integer getIng_mensual_bruto() {
         return ing_mensual_bruto;
     }
@@ -316,7 +306,7 @@ public class Trabajo implements Serializable {
     }
 
     public void setActividad_economica_pld(String actividad_economica_pld) {
-        this.actividad_economica_pld= actividad_economica_pld;
+        this.actividad_economica_pld = actividad_economica_pld;
     }
 
     public String getExt_tel_1() {
@@ -337,7 +327,7 @@ public class Trabajo implements Serializable {
 
     @Override
     public String toString() {
-        return "Trabajo{" + "trabajoPK=" + trabajoPK + ", nombre=" + nombre + ", calle=" + calle + ", numero=" + numero + ", idcolonia=" + idcolonia + ", telefono=" + telefono + ", telefono2=" + telefono2 + ", ocupacion=" + ocupacion + ", fechaingreso=" + fechaingreso + ", puesto=" + puesto + ", entrecalles=" + entrecalles + ", tipo_empleo=" + tipo_empleo + ", sector_laboral=" + sector_laboral + ", giro_empresa=" + giro_empresa + ", forma_comprobar_ing=" + forma_comprobar_ing + ", fechasalida=" + fechasalida + ", consecutivo=" + consecutivo + ", ing_mensual_bruto=" + ing_mensual_bruto + ", ing_mensual_neto=" + ing_mensual_neto + ", frecuencia_ingresos=" + frecuencia_ingresos + ", tipo_ocupacion=" + tipo_ocupacion + ", num_empleados=" + num_empleados + ", num_taxis=" + num_taxis + ", deducciones_deudas=" + deducciones_deudas + ", deducciones_otros=" + deducciones_otros + ", actividad_economica=" + actividad_economica + ", ocupacion_numero=" + ocupacion_numero + ", actividad_economica_pld=" + actividad_economica_pld + ", ext_tel_1=" + ext_tel_1 + ", ext_tel_2=" + ext_tel_2 + '}';
+        return "Trabajo{" + "trabajoPK=" + trabajoPK + ", nombre=" + nombre + ", calle=" + calle + ", numero=" + numero + ", idcolonia=" + idcolonia + ", telefono=" + telefono + ", telefono2=" + telefono2 + ", ocupacion=" + ocupacion + ", fechaingreso=" + fechaingreso + ", puesto=" + puesto + ", entrecalles=" + entrecalles + ", tipo_empleo=" + tipo_empleo + ", sector_laboral=" + sector_laboral + ", giro_empresa=" + giro_empresa + ", forma_comprobar_ing=" + forma_comprobar_ing + ", fechasalida=" + fechasalida + ", ing_mensual_bruto=" + ing_mensual_bruto + ", ing_mensual_neto=" + ing_mensual_neto + ", frecuencia_ingresos=" + frecuencia_ingresos + ", tipo_ocupacion=" + tipo_ocupacion + ", num_empleados=" + num_empleados + ", num_taxis=" + num_taxis + ", deducciones_deudas=" + deducciones_deudas + ", deducciones_otros=" + deducciones_otros + ", actividad_economica=" + actividad_economica + ", ocupacion_numero=" + ocupacion_numero + ", actividad_economica_pld=" + actividad_economica_pld + ", ext_tel_1=" + ext_tel_1 + ", ext_tel_2=" + ext_tel_2 + '}';
     }
     
 }
