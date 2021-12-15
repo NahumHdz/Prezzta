@@ -70,4 +70,31 @@ public class ClienteResources {
         }
         return Response.status(Response.Status.OK).entity(JsonResponse).build();
     }
+    
+    @POST
+    @Path("/datos_credito")
+    @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"})
+    @Consumes({MediaType.APPLICATION_JSON + ";charset=utf-8"})
+    public Response datos_credito(String request) {
+        System.out.println("Request: " + request);
+        JSONObject jsonRequest = new JSONObject(request);
+        
+        String numero_socio = "";
+        Double monto_solicitado = 0.0;
+        int plazo_solicitado = 0;
+        String producto_solicitado = "";
+        
+        try {
+            numero_socio = jsonRequest.getString("numero_socio");
+            monto_solicitado = jsonRequest.getDouble("monto_solicitado");
+            plazo_solicitado = jsonRequest.getInt("plazo_solicitado");
+            producto_solicitado = jsonRequest.getString("producto_solicitado");
+            System.out.println("JSON Correcto");
+        } catch (Exception e) {
+            System.out.println("Error JSON: " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+        }
+        return null;
+    }
+    
 }

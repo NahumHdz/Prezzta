@@ -467,7 +467,8 @@ public abstract class FacadeCustomer<T> {
         System.out.println("fechaDate:" + fechaDate);
         return fechaDate.replace("/","-");
     }
-   
+    
+    //Metodo para calcular cuantos meses hay entre 2 fechas
     public int restaFechas(Date fecha){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date hoy = new Date();
@@ -485,7 +486,8 @@ public abstract class FacadeCustomer<T> {
         System.out.println("TOTAL MESES:" + Meses);
         return Meses;
     }
-
+    
+    //Metodo para calcular edad
     public int cal_edad(Date fecha_nac){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String fechaNac = sdf.format(fecha_nac);
